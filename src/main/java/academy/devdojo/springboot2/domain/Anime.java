@@ -1,9 +1,6 @@
 package academy.devdojo.springboot2.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Generated;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +11,7 @@ import javax.persistence.Id;
 @AllArgsConstructor // cria os construtores
 @NoArgsConstructor // cria um construtor sem argumentos no padrao JPA
 @Entity
+@Builder
 public class Anime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
