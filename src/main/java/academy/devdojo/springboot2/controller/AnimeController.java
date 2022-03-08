@@ -35,6 +35,11 @@ public class AnimeController {
         return ResponseEntity.ok(animeService.findByIdOrThrowBadRequestException(id));
     }
 
+    @GetMapping(path = "/find/{name}")
+    public ResponseEntity <List<Anime>> findByName(@RequestParam String name ) {
+        return ResponseEntity.ok(animeService.findByName(name));
+    }
+
     @PostMapping
     //@ResponseStatus(HttpStatus.CREATED) outra maneira de fazer
     public ResponseEntity<Anime> save(@RequestBody AnimePostRequestBody animePostRequestBody){
